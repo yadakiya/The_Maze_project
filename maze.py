@@ -74,6 +74,12 @@ class Maze:
                 current = next_cell
                 current.visited = True
 
+                #  BONUS: create cycles sometimes (1 in 20 chance)
+                extra_neighbors = self.get_neighbors(current)
+                if extra_neighbors and random.randint(1, 20) == 1:
+                    extra_cell, extra_direction = random.choice(extra_neighbors)
+                    self.remove_wall(current, extra_cell, extra_direction)
+
             elif stack:
                 current = stack.pop()
 

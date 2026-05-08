@@ -19,6 +19,8 @@ BLACK = (0, 0, 0)
 
 maze = Maze(ROWS, COLS)
 maze.generate_maze()
+
+# entrance & exit openings
 maze.grid[0][0].walls["left"] = False
 maze.grid[ROWS - 1][COLS - 1].walls["right"] = False
 
@@ -47,6 +49,7 @@ def draw_solver():
         x = cell.col * CELL_SIZE + CELL_SIZE // 2
         y = cell.row * CELL_SIZE + CELL_SIZE // 2
         pygame.draw.circle(screen, (0, 0, 255), (x, y), 5)
+
     for cell in solver.path:
         x = cell.col * CELL_SIZE + CELL_SIZE // 2
         y = cell.row * CELL_SIZE + CELL_SIZE // 2

@@ -6,8 +6,8 @@ This project is a graphical maze generator and maze solver built using Python an
 
 The program performs two major tasks:
 
-1. Generate a random rectangular maze
-2. Automatically solve the maze
+1. Generate a random rectangular maze  
+2. Automatically solve the maze  
 
 The maze is generated dynamically using a Depth-First Search (DFS) algorithm with a stack. A virtual “mouse” moves through the maze and removes walls between cells to create valid paths.
 
@@ -17,13 +17,13 @@ The solver then traverses the maze from the start cell to the end cell using ano
 
 ## Features
 
-- Random maze generation
-- Real-time maze drawing using Pygame
-- Automatic maze solving
-- Dead-end visualization
-- Stack-based DFS traversal
-- Backtracking algorithm
-- Dynamic animation of maze creation and solving
+- Random maze generation  
+- Real-time maze drawing using Pygame  
+- Automatic maze solving  
+- Dead-end visualization  
+- Stack-based DFS traversal  
+- Backtracking algorithm  
+- Dynamic animation of maze creation and solving  
 
 ---
 
@@ -44,10 +44,10 @@ project_folder/
 
 Each maze cell contains four walls:
 
-- Top wall
-- Right wall
-- Bottom wall
-- Left wall
+- Top wall  
+- Right wall  
+- Bottom wall  
+- Left wall  
 
 Initially, every wall is intact.
 
@@ -72,8 +72,8 @@ self.walls = {
 }
 ```
 
-- `True` means the wall exists
-- `False` means the wall has been removed
+- `True` means the wall exists  
+- `False` means the wall has been removed  
 
 The maze itself is stored as a 2D grid:
 
@@ -85,24 +85,22 @@ self.grid = [[Cell(r, c) for c in range(cols)] for r in range(rows)]
 
 ## Maze Generation Algorithm
 
-The maze is generated using:
+The maze is generated using Depth-First Search (DFS) with a stack.
 
-### Depth-First Search (DFS) with Stack
+### Steps
 
-#### Steps
-
-1. Start from the first cell
-2. Mark it as visited
-3. Check all neighboring cells
-4. Choose one unvisited neighbor randomly
-5. Remove the wall between the current cell and chosen neighbor
-6. Push the current cell onto the stack
-7. Move to the chosen neighbor
-8. Repeat the process
+1. Start from the first cell  
+2. Mark it as visited  
+3. Check all neighboring cells  
+4. Choose one unvisited neighbor randomly  
+5. Remove the wall between the current cell and chosen neighbor  
+6. Push the current cell onto the stack  
+7. Move to the chosen neighbor  
+8. Repeat the process  
 9. If trapped in a dead end:
-   - Pop a cell from the stack
-   - Backtrack
-10. Continue until all cells are visited
+   - Pop a cell from the stack  
+   - Backtrack  
+10. Continue until all cells are visited  
 
 ---
 
@@ -122,17 +120,17 @@ Using a queue would produce a very different maze.
 
 ### Stack (DFS)
 
-- Creates long corridors
-- Produces deep paths
-- Generates complex mazes
-- Better for maze appearance
+- Creates long corridors  
+- Produces deep paths  
+- Generates complex mazes  
+- Better for maze appearance  
 
 ### Queue (BFS)
 
-- Expands evenly
-- Produces short paths
-- Maze looks less interesting
-- More grid-like
+- Expands evenly  
+- Produces short paths  
+- Maze looks less interesting  
+- More grid-like  
 
 That is why a stack is preferred.
 
@@ -144,21 +142,21 @@ The maze is solved using another stack-based backtracking algorithm.
 
 ### Solver Steps
 
-1. Start at the maze entrance
-2. Move randomly to a valid neighboring cell
-3. Push visited cells onto a stack
+1. Start at the maze entrance  
+2. Move randomly to a valid neighboring cell  
+3. Push visited cells onto a stack  
 4. If a dead end is reached:
-   - Mark the cell blue
-   - Pop from the stack
-   - Backtrack
-5. Continue until reaching the destination
+   - Mark the cell blue  
+   - Pop from the stack  
+   - Backtrack  
+5. Continue until reaching the destination  
 
 ---
 
 ## Color Representation
 
 | Color | Meaning |
-| --- | --- |
+| ------ | -------- |
 | Black | Maze walls |
 | Red | Current mouse position |
 | Green | Correct path |
@@ -171,11 +169,11 @@ The maze is solved using another stack-based backtracking algorithm.
 
 `main.py` controls:
 
-- Pygame window
-- Drawing the maze
-- Drawing the solver
-- Animation loop
-- Event handling
+- Pygame window  
+- Drawing the maze  
+- Drawing the solver  
+- Animation loop  
+- Event handling  
 
 It connects the maze generator and solver together.
 
@@ -190,17 +188,17 @@ It connects the maze generator and solver together.
 Represents each maze cell.
 
 Stores:
--Position
--Walls
--Visited state
+-Position  
+-Walls  
+-Visited state  
 
 ### Maze Class
 
 Handles:
--Grid creation
--Neighbor checking
--Wall removal
--DFS maze generation
+-Grid creation  
+-Neighbor checking  
+-Wall removal  
+-DFS maze generation  
 
 ---
 
@@ -209,11 +207,11 @@ Handles:
 `solver.py` contains the solving algorithm.
 
 It handles:
--Valid movement checking
--Stack-based traversal
--Backtracking
--Path storage
--Dead-end tracking
+-Valid movement checking  
+-Stack-based traversal  
+-Backtracking  
+-Path storage  
+-Dead-end tracking  
 
 ---
 
@@ -224,6 +222,7 @@ It handles:
 Download Python from the official website:
 
 [Python Official Website](https://www.python.org)
+
 ---
 
 ### Install Pygame
@@ -250,20 +249,20 @@ python main.py
 
 The program will:
 
-1. Generate a random maze
-2. Display it graphically
-3. Start solving automatically
+1. Generate a random maze  
+2. Display it graphically  
+3. Start solving automatically  
 4. Show:
-   - Red moving solver
-   - Blue dead ends
-   - Green successful path
+   - Red moving solver  
+   - Blue dead ends  
+   - Green successful path  
 
 ---
 
 ## Algorithms Used
 
 | Part | Algorithm |
-| --- | --- |
+| ------ | ---------- |
 | Maze Generation | DFS + Stack |
 | Maze Solving | Backtracking + Stack |
 
@@ -283,10 +282,10 @@ This can create cycles inside the maze.
 
 ### Effect
 
-- The maze is no longer a perfect tree
-- Multiple paths may exist
-- The “shoulder-to-the-wall” method may fail
-- The maze becomes more challenging
+- The maze is no longer a perfect tree  
+- Multiple paths may exist  
+- The “shoulder-to-the-wall” method may fail  
+- The maze becomes more challenging  
 
 ---
 
@@ -318,14 +317,14 @@ The solver may visit every cell once.
 
 This project helps understand:
 
-- Depth-First Search (DFS)
-- Backtracking
-- Stack data structures
-- Graph traversal
-- Maze algorithms
-- Pygame graphics
-- Object-Oriented Programming
-- Randomized algorithms
+- Depth-First Search (DFS)  
+- Backtracking  
+- Stack data structures  
+- Graph traversal  
+- Maze algorithms  
+- Pygame graphics  
+- Object-Oriented Programming  
+- Randomized algorithms  
 
 ---
 
@@ -334,40 +333,35 @@ This project helps understand:
 Example GitHub commits:
 
 ```text
-Initial project setup
-Created Cell class
-Implemented maze grid
-Added DFS maze generation
-Implemented wall removal
-Implemented solver algorithm
-Added backtracking
-Added Pygame visualization
-Added dead-end coloring
-Final README update
+Initial project setup  
+Created Cell class  
+Implemented maze grid  
+Added DFS maze generation  
+Implemented wall removal  
+Implemented solver algorithm  
+Added backtracking  
+Added Pygame visualization  
+Added dead-end coloring  
+Final README update  
 ```
 
 ---
 
 ## Loom Demonstration Checklist
 
-### In the recording show:
+### Maze Generation
+-Mouse removing walls dynamically  
+-Maze forming step-by-step  
 
-#### Maze Generation
+### Maze Solver
+-Red dot movement  
+-Blue dead ends  
+-Green final path  
 
-- Mouse removing walls dynamically
-- Maze forming step-by-step
-
-#### Maze Solver
-
-- Red dot movement
-- Blue dead ends
-- Green final path
-
-#### Bonus
-
-- Extra wall removals
-- Cycles inside maze
-- Shoulder-rule discussion
+### Bonus
+-Extra wall removals  
+-Cycles inside maze  
+-Shoulder-rule discussion  
 
 ---
 
@@ -377,4 +371,4 @@ This project demonstrates how stacks and backtracking algorithms can be used to 
 
 The maze generation algorithm guarantees that every cell is reachable, while the solver efficiently explores paths and backtracks from dead ends until the correct route is found.
 
-The project combines algorithms, data structures, and graphical visualization into an interactive application
+The project combines algorithms, data structures, and graphical visualization into an interactive application.

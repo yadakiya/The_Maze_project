@@ -36,21 +36,21 @@ class Solver:
 
     def step(self):
         if self.current == self.end:
-           self.path = self.stack.copy()
-           self.path.append(self.end)
-           return True
+            self.path = self.stack.copy()
+            self.path.append(self.end)
+            return True
 
         moves = self.get_moves(self.current)
 
         if moves:
-           self.stack.append(self.current)
+            self.stack.append(self.current)
 
-           next_cell = random.choice(moves)
-           self.current = next_cell
-           self.visited.add((self.current.row, self.current.col))
+            next_cell = random.choice(moves)
+            self.current = next_cell
+            self.visited.add((self.current.row, self.current.col))
 
         elif self.stack:
-           self.dead_ends.append(self.current)
-           self.current = self.stack.pop()
+            self.dead_ends.append(self.current)
+            self.current = self.stack.pop()
 
         return False

@@ -61,6 +61,8 @@ Because of the DFS algorithm, every cell becomes connected with exactly one vali
 
 Each cell is represented using a class.
 
+This project uses a Python dictionary-based wall system instead of separate `northWall` and `eastWall` arrays. Each cell stores its top, right, bottom, and left wall states using Boolean values.
+
 ```python
 self.walls = {
     "top": True,
@@ -188,17 +190,17 @@ It connects the maze generator and solver together.
 Represents each maze cell.
 
 Stores:
--Position
--Walls
--Visited state
+- Position
+- Walls
+- Visited state
 
 ### Maze Class
 
 Handles:
--Grid creation
--Neighbor checking
--Wall removal
--DFS maze generation
+- Grid creation
+- Neighbor checking
+- Wall removal
+- DFS maze generation
 
 ---
 
@@ -207,11 +209,11 @@ Handles:
 `solver.py` contains the solving algorithm.
 
 It handles:
--Valid movement checking
--Stack-based traversal
--Backtracking
--Path storage
--dead-end tracking
+- Valid movement checking
+- Stack-based traversal
+- Backtracking
+- Path storage
+- Dead-end tracking
 
 ---
 
@@ -221,7 +223,7 @@ It handles:
 
 Download Python from the official website:
 
-   https://www.python.org
+https://www.python.org
 
 ---
 

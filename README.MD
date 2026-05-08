@@ -158,7 +158,7 @@ The maze is solved using another stack-based backtracking algorithm.
 ## Color Representation
 
 | Color | Meaning |
-|---|---|
+| --- | --- |
 | Black | Maze walls |
 | Red | Current mouse position |
 | Green | Correct path |
@@ -190,17 +190,17 @@ It connects the maze generator and solver together.
 Represents each maze cell.
 
 Stores:
-- Position
-- Walls
-- Visited state
+-Position
+-Walls
+-Visited state
 
 ### Maze Class
 
 Handles:
-- Grid creation
-- Neighbor checking
-- Wall removal
-- DFS maze generation
+-Grid creation
+-Neighbor checking
+-Wall removal
+-DFS maze generation
 
 ---
 
@@ -209,11 +209,11 @@ Handles:
 `solver.py` contains the solving algorithm.
 
 It handles:
-- Valid movement checking
-- Stack-based traversal
-- Backtracking
-- Path storage
-- Dead-end tracking
+-Valid movement checking
+-Stack-based traversal
+-Backtracking
+-Path storage
+-Dead-end tracking
 
 ---
 
@@ -223,8 +223,7 @@ It handles:
 
 Download Python from the official website:
 
-https://www.python.org
-
+[Python Official Website](https://www.python.org)
 ---
 
 ### Install Pygame
@@ -264,7 +263,7 @@ The program will:
 ## Algorithms Used
 
 | Part | Algorithm |
-|---|---|
+| --- | --- |
 | Maze Generation | DFS + Stack |
 | Maze Solving | Backtracking + Stack |
 
@@ -378,4 +377,4 @@ This project demonstrates how stacks and backtracking algorithms can be used to 
 
 The maze generation algorithm guarantees that every cell is reachable, while the solver efficiently explores paths and backtracks from dead ends until the correct route is found.
 
-The project combines algorithms, data structures, and graphical visualization into an interactive application.
+The project combines algorithms, data structures, and graphical visualization into an interactive application
